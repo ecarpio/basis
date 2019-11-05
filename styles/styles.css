@@ -1,0 +1,109 @@
+body {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.ease-in-back, .big-logo-container, .panelOpen .big-logo-container {
+  -webkit-transition: all 200ms cubic-bezier(0.6, 0, 0.735, 0.045);
+  /* older webkit */
+  -webkit-transition: all 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -moz-transition: all 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -o-transition: all 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: all 200ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  /* easeInBack */
+  -webkit-transition-timing-function: cubic-bezier(0.6, 0, 0.735, 0.045);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -moz-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -o-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  /* easeInBack */
+}
+
+html,
+body {
+  background-color: #000000;
+}
+
+header {
+  margin-top: 40px;
+  text-align: right;
+}
+
+.big-logo-container {
+  text-align: center;
+  margin-top: 80px;
+  height: 500px;
+}
+
+.panel-header {
+  position: relative;
+  width: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.panel-header .btn {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  padding: 0px;
+  margin: 0px;
+  transition: font-size 0.1s;
+  font-size: 3rem;
+}
+
+.panel-header .collapsed {
+  transition: font-size 0.1s;
+  font-size: 1.35rem;
+  height: 30px;
+}
+
+.panel-header .collapsed:before {
+  content: "";
+}
+
+.work-panel .work-column {
+  width: 33%;
+  min-height: 500px;
+  display: inline-block;
+  background-color: #666;
+}
+
+.about-panel .intro {
+  background-color: #666666;
+  min-height: 200px;
+  padding: 40px 0px;
+}
+
+.about-panel .development {
+  background-color: #ffffff;
+  min-height: 200px;
+  padding: 40px 0px;
+  text-align: center;
+  color: #000000;
+}
+
+.about-panel .design {
+  background-color: #666666;
+  min-height: 200px;
+  padding: 40px 0px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.contact-panel {
+  background-color: #666666;
+  min-height: 200px;
+  padding: 40px 0px;
+}
+
+.panelOpen .big-logo-container {
+  height: 0px;
+  overflow: hidden;
+}
+
+.panelOpen .accordion {
+  margin-top: -100px;
+}

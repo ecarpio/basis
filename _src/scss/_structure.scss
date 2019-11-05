@@ -1,0 +1,102 @@
+html,
+body {
+  background-color: $color-black;
+}
+
+.container {
+}
+
+header {
+  margin-top: 40px;
+  text-align: right;
+}
+
+.big-logo-container {
+  text-align: center;
+  margin-top: 80px;
+  height: 500px;
+  @extend .ease-in-back;
+}
+
+.panel-header {
+  position: relative;
+  width: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .btn {
+    display: block;
+    color: $color-white;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 0px;
+    margin: 0px;
+    transition: font-size 0.1s;
+    font-size: 3rem;
+  }
+
+  .collapsed {
+    transition: font-size 0.1s;
+    font-size: 1.35rem;
+    height: 30px;
+    &:before {
+      content: "";
+    }
+  }
+}
+
+// Work Panels
+
+.work-panel {
+  .work-column {
+    width: 33%;
+    min-height: 500px;
+    display: inline-block;
+    background-color: #666;
+  }
+}
+
+// About Panel
+.about-panel {
+  .intro {
+    background-color: $color-gray;
+    min-height: 200px;
+    padding: 40px 0px;
+  }
+
+  .development {
+    background-color: $color-white;
+    min-height: 200px;
+    padding: 40px 0px;
+    text-align: center;
+    color: $color-black;
+  }
+
+  .design {
+    background-color: $color-gray;
+    min-height: 200px;
+    padding: 40px 0px;
+    text-align: center;
+    color: $color-white;
+  }
+}
+
+// Contact Panel
+.contact-panel {
+  background-color: $color-gray;
+  min-height: 200px;
+  padding: 40px 0px;
+}
+
+// Panel Open
+.panelOpen {
+  .big-logo-container {
+    height: 0px;
+    overflow: hidden;
+    @extend .ease-in-back;
+  }
+
+  .accordion {
+    margin-top: -100px;
+  }
+}
