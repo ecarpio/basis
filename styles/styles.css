@@ -54,6 +54,13 @@ header {
   font-size: 3rem;
 }
 
+.panel-header .btn:before {
+  content: "X";
+  position: absolute;
+  left: -50px;
+  font-size: 1.25rem;
+}
+
 .panel-header .collapsed {
   transition: font-size 0.1s;
   font-size: 1.35rem;

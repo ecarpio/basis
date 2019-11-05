@@ -33,6 +33,13 @@ header {
     margin: 0px;
     transition: font-size 0.1s;
     font-size: 3rem;
+
+    &:before {
+      content: "X";
+      position: absolute;
+      left: -50px;
+      font-size: 1.25rem;
+    }
   }
 
   .collapsed {
