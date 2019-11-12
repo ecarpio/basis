@@ -3,9 +3,6 @@ body {
   background-color: $color-black;
 }
 
-.container {
-}
-
 header {
   margin-top: 40px;
   text-align: right;
@@ -15,14 +12,26 @@ header {
   text-align: center;
   margin-top: 80px;
   height: 500px;
-  @extend .ease-in-back;
+  @extend .ease-out-quart;
 }
 
 .panel-header {
   position: relative;
-  width: 100px;
+  width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
+
+  &.work-panel-header {
+    &.active {
+      button {
+        display: none;
+      }
+
+      span {
+        display: block;
+      }
+    }
+  }
 
   .btn {
     display: block;
@@ -32,11 +41,16 @@ header {
     padding: 0px;
     margin: 0px;
     transition: font-size 0.1s;
-    font-size: 3rem;
+    font-size: 4.5rem;
 
     &:before {
-      content: "X";
+      content: "";
+      background: url("../../images/icon-close.svg");
+      height: 30px;
+      width: 30px;
+      background-repeat: no-repeat;
       position: absolute;
+      top: 50px;
       left: -50px;
       font-size: 1.25rem;
     }
@@ -48,18 +62,149 @@ header {
     height: 30px;
     &:before {
       content: "";
+      display: none;
     }
+  }
+
+  .work-detail-title {
+    font-size: 4.5rem;
+    color: $color-white;
+    text-decoration: none;
+    font-weight: 300;
+    width: 100%;
+    display: block;
   }
 }
 
 // Work Panels
 
 .work-panel {
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // Work Column Properties
   .work-column {
-    width: 33%;
-    min-height: 500px;
-    display: inline-block;
-    background-color: #666;
+    width: 32.5%;
+    display: inline-flexbox;
+    margin-right: 2px;
+    transition: all 0.2s ease-in;
+    position: relative;
+
+    // Work Column On Hover
+    &:hover {
+      .work-image {
+        position: relative;
+        // Column Overlay
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          right: 0px;
+          left: 0px;
+          opacity: 1;
+          background-color: rgba(0, 0, 0, 0.5);
+          transition: all 0.2s ease-in;
+          z-index: 0;
+        }
+
+        // Scale work Logo
+        .work-logo {
+          transform: scale(1, 1);
+          transition-timing-function: ease-in;
+          opacity: 1;
+          z-index: 100;
+        }
+      }
+    }
+
+    .work-image {
+      min-height: 500px;
+      background-color: #666;
+      background-position: top right;
+      background-size: cover;
+      text-align: center;
+      display: block;
+      max-height: 500px;
+      height: 100%;
+
+      .work-logo {
+        @include vertical-align();
+        transform: scale(0.1, 0.1);
+        width: 80%;
+        font-size: 1.25rem;
+        font-weight: 200;
+        margin: auto;
+        opacity: 0;
+        transition: all 0.2s ease-in;
+
+        .title {
+          font-size: 2rem;
+          line-height: 2rem;
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    .work-detail {
+      display: none;
+      background-color: $color-white;
+      padding: 20px;
+      color: $color-black;
+    }
+
+    // Work Column is Active and Expanded
+    &.active {
+      width: 100%;
+      transition: all 0.2s ease-in;
+      .work-logo {
+        display: none;
+      }
+      .work-detail {
+        display: block;
+        color: $color-black;
+        width: 100%;
+        min-height: 200px;
+      }
+
+      // Disable Hover Actions
+      &:hover {
+        &:before {
+          opacity: 0;
+          content: "";
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+
+      &:before {
+        content: "";
+        opacity: 0;
+        transition: all 0.2s ease-out;
+        background-color: rgba(0, 0, 0, 0);
+      }
+    }
+  }
+}
+
+#workCarousel {
+  background: $color-black;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: none;
+  @extend .ease-out-quart;
+
+  &.active {
+    display: block;
+    @extend .ease-out-quart;
+  }
+
+  .carousel-item {
+    background-color: $color-white;
+    min-height: 200px;
   }
 }
 
@@ -67,13 +212,13 @@ header {
 .about-panel {
   .intro {
     background-color: $color-gray;
-    min-height: 200px;
+    min-height: 60vh;
     padding: 40px 0px;
   }
 
   .development {
     background-color: $color-white;
-    min-height: 200px;
+    min-height: 60vh;
     padding: 40px 0px;
     text-align: center;
     color: $color-black;
@@ -81,7 +226,7 @@ header {
 
   .design {
     background-color: $color-gray;
-    min-height: 200px;
+    min-height: 60vh;
     padding: 40px 0px;
     text-align: center;
     color: $color-white;
@@ -100,7 +245,7 @@ header {
   .big-logo-container {
     height: 0px;
     overflow: hidden;
-    @extend .ease-in-back;
+    @extend .ease-out-quart;
   }
 
   .accordion {

@@ -1,3 +1,28 @@
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.ease-out-quart {
+  -webkit-transition: all 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: all 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 800ms cubic-bezier(0.165, 0.84, 0.44, 1); /* easeOutQuart */
+
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-timing-function: cubic-bezier(
+    0.165,
+    0.84,
+    0.44,
+    1
+  ); /* easeOutQuart */
+}
+
 // Ease In Back
 .ease-in-back {
   -webkit-transition: all 200ms cubic-bezier(0.6, 0, 0.735, 0.045); /* older webkit */

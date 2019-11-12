@@ -37,30 +37,69 @@
 
       <!-- Start Work Panel -->
       <div class="container">
-        <div class="panel-header">
+        <!-- Start Work Panel Header -->
+        <div class="panel-header work-panel-header">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#work" aria-expanded="true" aria-controls="work">
             Work
           </button>
-        </div>
-        <div id="work" class="collapse panel work-panel" aria-labelledby="bodyWork" data-parent="#pageSections">
-          <div class="work-column">
-            
-            red
-
-          </div>
-          <div class="work-column">
-            
-            red
-
-          </div>
-          <div class="work-column">
-            
-            red
-
+          <div class="work-detail-title">
+            <span></span>
           </div>
         </div>
-        <!-- End Work Panel -->
+        <!-- End Work Panel Header -->
       </div>
+      <div id="work" class="collapse panel work-panel" aria-labelledby="bodyWork" data-parent="#pageSections">
+        <div class="container">
+        <!-- Start Red Work Column-->
+        <div class="work-column red" id="red" data-workId="red" data-workCaption="Red Hydrogen One">
+
+          <div class="work-image">
+            <div class="work-logo">
+              <div class="title">HYDROGEN One</div>
+              Media Machine
+            </div>
+          </div>
+
+          <div class="work-detail">
+            Red Work Detail
+          </div>
+
+        </div>
+        <!-- Edm Red Work Column-->
+
+        <!-- Start Ohio Work Column-->
+        <div class="work-column" data-workId="ohio" data-workCaption="Buckeye Nation Rewards">
+            <div class="work-image">
+              <div class="work-logo">
+                <div class="title">Ohio State</div>
+                Buckeye Nation Rewards
+              </div>
+            </div>
+
+            <div class="work-detail">
+                Ohio Work Detail
+              </div>
+        </div>
+        <!-- End Ohio Work Column-->
+
+        <!-- Start CCB Work Column-->
+        <div class="work-column" data-workId="ccb" data-workCaption="California Cryobank">  
+            <div class="work-image">
+              <div class="work-logo">
+                <div class="title">California Cryobank</div>
+                World's Largest Donor Database
+              </div>
+            </div>
+
+            <div class="work-detail">
+                CCB Work Detail
+              </div>
+        </div>
+        <!-- End CCB Work Column-->
+        </div>
+      </div>
+      <!-- End Work Panel -->
+      
       <!-- Start About Panel -->
       <div class="container">
       <div class="panel-header">
@@ -149,10 +188,10 @@
         </div>
       </div>
       <!-- End Contact Panel-->
-
     </div>
-
     <!-- End Accordion Navigation -->
+
+
 
     
   </body>
