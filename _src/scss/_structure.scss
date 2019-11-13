@@ -21,13 +21,33 @@ header {
   margin-top: 20px;
   margin-bottom: 20px;
 
+  
+
   &.work-panel-header {
+    
+    .work-detail-title { 
+      display:none;
+
+      &:before {
+        content: "";
+        background: url("../../images/icon-back.svg");
+        height: 35px;
+        width: 30px;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 40px;
+        left: -50px;
+        font-size: 1.25rem;
+        cursor:pointer;
+      }
+    }
+    
     &.active {
       button {
         display: none;
       }
 
-      span {
+      .work-detail-title {
         display: block;
       }
     }
@@ -53,6 +73,7 @@ header {
       top: 50px;
       left: -50px;
       font-size: 1.25rem;
+      cursor:pointer
     }
   }
 
@@ -122,13 +143,13 @@ header {
     }
 
     .work-image {
-      min-height: 500px;
+      min-height: 600px;
       background-color: #666;
       background-position: top right;
       background-size: cover;
       text-align: center;
       display: block;
-      max-height: 500px;
+      max-height: 600px;
       height: 100%;
 
       .work-logo {
@@ -152,8 +173,35 @@ header {
     .work-detail {
       display: none;
       background-color: $color-white;
-      padding: 20px;
-      color: $color-black;
+      padding: 50px 40px 0px 40px;
+      color: $color-black; 
+
+        h3 {
+          margin-bottom:40px;
+        }
+
+        .video-container {
+          height:340px;
+          width:100%;
+          display:table-cell;
+          vertical-align: middle;
+          text-align: center;
+          margin:auto;
+        }
+
+        .carousel-container {
+          display:flex;
+
+            .column {
+              width:49%;
+
+                .carousel-text {
+                  padding-top:100px;
+                  padding-right:60px;
+                }
+            }
+        }
+
     }
 
     // Work Column is Active and Expanded

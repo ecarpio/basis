@@ -26,16 +26,32 @@ $(function() {
       $(this).addClass("active");
       $(".work-column:not(.active)").hide();
 
-      $(".work-panel-header")
-        .addClass("active")
-        .html(workCaption);
+      $(".work-panel-header").addClass("active")
+      $('.work-panel-header .work-detail-title')  .html(workCaption);
     });
   });
 
-  $(".work-detail-title").on("click", function() {
+
+  function closeExpanded() {
     $(".work-column")
       .removeClass("active")
       .show();
     $(".work-panel-header").removeClass("active");
+  }
+
+
+  $(".work-detail-title").on("click", function() {
+    closeExpanded();  
   });
+
+  
+
+  $('.panel-header button').on('click', function(){
+    
+
+
+    closeExpanded();
+
+  })
+
 });

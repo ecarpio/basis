@@ -6,6 +6,49 @@
   transform: translateY(-50%);
 }
 
+.carousel {
+
+  &#redCarousel {
+    .carousel-item {
+      text-align: center;
+    }
+
+    .carousel-control-prev {
+      left:-50px;
+    }
+
+    .carousel-control-next {
+      right:-50px;
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .ease-out-quart {
   -webkit-transition: all 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
   -moz-transition: all 800ms cubic-bezier(0.165, 0.84, 0.44, 1);
