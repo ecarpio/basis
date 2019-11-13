@@ -204,19 +204,27 @@ header {
   height: 100%;
 }
 
-.work-panel .work-column .work-image .work-logo {
+.work-panel .work-column .work-image .animate-wrapper {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  transform: scale(0.1, 0.1);
+}
+
+.work-panel .work-column .work-image .work-logo {
+  transform: scale(0, 0);
   width: 80%;
   font-size: 1.25rem;
   font-weight: 200;
   margin: auto;
-  opacity: 0;
+  opacity: 1;
   transition: all 0.2s ease-in;
+  height: 150px;
+}
+
+.work-panel .work-column .work-image .work-logo img {
+  margin-bottom: 10px;
 }
 
 .work-panel .work-column .work-image .work-logo .title {

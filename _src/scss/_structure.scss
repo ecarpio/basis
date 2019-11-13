@@ -152,15 +152,24 @@ header {
       max-height: 600px;
       height: 100%;
 
-      .work-logo {
+      .animate-wrapper {
         @include vertical-align();
-        transform: scale(0.1, 0.1);
+      }
+
+      .work-logo {
+       
+        transform: scale(0, 0);
         width: 80%;
         font-size: 1.25rem;
         font-weight: 200;
         margin: auto;
-        opacity: 0;
+        opacity: 1;
         transition: all 0.2s ease-in;
+        height:150px;
+
+        img {
+          margin-bottom:10px;
+        }
 
         .title {
           font-size: 2rem;
