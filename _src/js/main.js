@@ -18,7 +18,7 @@ $(function() {
     // Apply Background Image
     $(this)
       .find(".work-image")
-      .css("background-image", "url(/images/hero-" + workBg + ".png)");
+      .css("background-image", "url(images/hero-" + workBg + ".png)");
 
     // Click Action to Expand and Show Detail
     $(this).on("click", function() {

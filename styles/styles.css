@@ -92,7 +92,7 @@ header {
 
 .panel-header.work-panel-header .work-detail-title:before {
   content: "";
-  background: url("../../images/icon-back.svg");
+  background: url("../images/icon-back.svg");
   height: 35px;
   width: 30px;
   background-repeat: no-repeat;
@@ -124,7 +124,7 @@ header {
 
 .panel-header .btn:before {
   content: "";
-  background: url("../../images/icon-close.svg");
+  background: url("../images/icon-close.svg");
   height: 30px;
   width: 30px;
   background-repeat: no-repeat;
