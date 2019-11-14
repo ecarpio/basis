@@ -171,7 +171,7 @@ header {
         font-weight: 200;
         margin: auto;
         opacity: 1;
-        transition: all 0.2s ease-in;
+        transition: all 0.3s ease-in;
         height: 150px;
 
         img {
@@ -303,27 +303,77 @@ header {
 }
 
 // About Panel
-.about-panel {
+.general-panel {
+
+  .hz-section {
+    min-height: 50vh;
+    padding: 40px 0px;
+    position: relative;
+      
+      .container {
+        min-height: 50vh;
+        position: relative;
+      }
+
+      .row {
+        @include vertical-align;
+        position: absolute;
+      }
+      
+      h2 {
+        @extend .assistant;
+        font-size:2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      h4 {
+        color:$color-light-gray;
+        font-size:1rem;
+        text-transform:uppercase;
+        letter-spacing:2px;
+      }
+
+      .service-list {
+        text-align: left;
+
+          ul {
+            margin:0px;
+            padding:0px;
+              li {
+                list-style-type: none;
+                font-size:.875rem;
+              }
+          }
+      }
+  }
+
   .intro {
     background-color: $color-gray;
-    min-height: 60vh;
-    padding: 40px 0px;
+    
+      h3 {
+        color:$color-light-gray;
+        font-weight:700;
+      }
+
   }
 
   .development {
     background-color: $color-white;
-    min-height: 60vh;
-    padding: 40px 0px;
-    text-align: center;
     color: $color-black;
+    text-align: center;
+
+      
   }
 
   .design {
     background-color: $color-gray;
-    min-height: 60vh;
-    padding: 40px 0px;
     text-align: center;
     color: $color-white;
+
+      h4 {
+        color:$color-white;
+      }
   }
 }
 

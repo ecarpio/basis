@@ -19,7 +19,7 @@ gulp.task("bootstrap", function() {
     .pipe(
       sass({
         outputStyle: "compressed",
-        includePaths: [config.node + "/bootstrap/scss/"]
+        includePaths: [config.node + "/bootstrap/scss/", config.node + "/@fortawesome/fontawesome-pro/scss/."]
       })
     )
     .on("error", sass.logError)
@@ -51,6 +51,7 @@ gulp.task("compress", function() {
 
       config.source + "/js/vendors/jquery-mobile.min.js",
       config.node + "/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js",
+      config.node + "/@fortawesome/fontawesome-pro/js/all.min.js",
       config.node + "/aos/dist/aos.js",
       config.source + "/js/vendors/modernizr.custom.17475.js"
       //config.source + '/js/main.js',

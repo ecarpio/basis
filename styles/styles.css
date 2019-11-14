@@ -1,4 +1,4 @@
-.assistant, body {
+.assistant, body, .general-panel .hz-section h2 {
   font-family: "Assistant";
 }
 
@@ -22,7 +22,7 @@ h3 {
 
 p {
   font-size: 1.25rem;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 video {
@@ -32,8 +32,26 @@ video {
   outline: none;
 }
 
-.carousel .carousel-control-prev i,
-.carousel .carousel-control-next i {
+.btn {
+  border-radius: 0;
+}
+
+.btn.btn-primary {
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  font-size: 1.5rem;
+  padding: 10px 100px;
+}
+
+textarea {
+  width: 100%;
+  height: 320px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.carousel .carousel-control-prev span,
+.carousel .carousel-control-next span {
   border: 1px solid #000000;
   color: #000000;
   font-size: 1.5rem;
@@ -58,7 +76,7 @@ video {
   right: -50px;
 }
 
-.carousel#ccbCarousel .carousel-item img {
+.carousel#ccbCarousel .carousel-item img, .carousel#ohioCarousel .carousel-item img {
   width: 100%;
 }
 
@@ -258,7 +276,7 @@ header {
   font-weight: 200;
   margin: auto;
   opacity: 1;
-  transition: all 0.2s ease-in;
+  transition: all 0.3s ease-in;
   height: 150px;
 }
 
@@ -380,30 +398,80 @@ header {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.about-panel .intro {
-  background-color: #666666;
-  min-height: 60vh;
+.general-panel .hz-section {
+  min-height: 50vh;
   padding: 40px 0px;
+  position: relative;
 }
 
-.about-panel .development {
+.general-panel .hz-section .container {
+  min-height: 50vh;
+  position: relative;
+}
+
+.general-panel .hz-section .row {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+.general-panel .hz-section h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.general-panel .hz-section h4 {
+  color: #777;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.general-panel .hz-section .service-list {
+  text-align: left;
+}
+
+.general-panel .hz-section .service-list ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.general-panel .hz-section .service-list ul li {
+  list-style-type: none;
+  font-size: .875rem;
+}
+
+.general-panel .intro {
+  background-color: #353535;
+}
+
+.general-panel .intro h3 {
+  color: #777;
+  font-weight: 700;
+}
+
+.general-panel .development {
   background-color: #ffffff;
-  min-height: 60vh;
-  padding: 40px 0px;
-  text-align: center;
   color: #000000;
+  text-align: center;
 }
 
-.about-panel .design {
-  background-color: #666666;
-  min-height: 60vh;
-  padding: 40px 0px;
+.general-panel .design {
+  background-color: #353535;
   text-align: center;
   color: #ffffff;
 }
 
+.general-panel .design h4 {
+  color: #ffffff;
+}
+
 .contact-panel {
-  background-color: #666666;
+  background-color: #353535;
   min-height: 200px;
   padding: 40px 0px;
 }

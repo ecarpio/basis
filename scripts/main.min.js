@@ -35,8 +35,8 @@ $(function() {
       $(".work-panel-header").addClass("active");
       $(".work-panel-header .work-detail-title").html(workCaption);
 
-      //Reset Video
-      $("#redVideo").get(0).currentTime = 0;
+      //Play Video
+      
       $("#redVideo")
         .get(0)
         .play();
@@ -47,6 +47,7 @@ $(function() {
     $(".work-column").removeClass("active hide-panel relative");
     $(".work-panel-header").removeClass("active");
     //Reset Video
+    $("#redVideo").get(0).currentTime = 0;
     $("#redVideo")
       .get(0)
       .pause();
