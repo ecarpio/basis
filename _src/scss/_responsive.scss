@@ -1,0 +1,52 @@
+@media (max-width: 991px) {
+  .container {
+    width: 100% !important;
+  }
+
+  .panel-header {
+    .btn {
+      font-size: 3.2rem;
+
+      &:before {
+        top: 30px;
+      }
+    }
+
+    .collapsed {
+      font-size: 1.35rem;
+    }
+
+    .work-detail-title {
+      font-size: 3.2rem;
+      &:before {
+        top: 20px !important;
+      }
+    }
+  }
+
+  .work-panel {
+    .container {
+      display: block;
+    }
+
+    .work-column {
+      position: relative;
+      width: 100%;
+      display: block;
+      height: 200px;
+
+      &.hide-panel {
+        display: none;
+        &.active {
+          display: block;
+          height: auto;
+        }
+      }
+
+      .work-image {
+        height: 200px;
+        min-height: 200px;
+      }
+    }
+  }
+}

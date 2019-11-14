@@ -198,6 +198,7 @@ header {
   margin-right: 2px;
   transition: width 0.2s ease-in;
   position: relative;
+  overflow: hidden;
 }
 
 .work-panel .work-column:hover .work-image {
@@ -414,4 +415,45 @@ header {
 
 .panelOpen .accordion {
   margin-top: -100px;
+}
+
+@media (max-width: 991px) {
+  .container {
+    width: 100% !important;
+  }
+  .panel-header .btn {
+    font-size: 3.2rem;
+  }
+  .panel-header .btn:before {
+    top: 30px;
+  }
+  .panel-header .collapsed {
+    font-size: 1.35rem;
+  }
+  .panel-header .work-detail-title {
+    font-size: 3.2rem;
+  }
+  .panel-header .work-detail-title:before {
+    top: 20px !important;
+  }
+  .work-panel .container {
+    display: block;
+  }
+  .work-panel .work-column {
+    position: relative;
+    width: 100%;
+    display: block;
+    height: 200px;
+  }
+  .work-panel .work-column.hide-panel {
+    display: none;
+  }
+  .work-panel .work-column.hide-panel.active {
+    display: block;
+    height: auto;
+  }
+  .work-panel .work-column .work-image {
+    height: 200px;
+    min-height: 200px;
+  }
 }

@@ -112,6 +112,7 @@ header {
     margin-right: 2px;
     transition: width 0.2s ease-in;
     position: relative;
+    overflow: hidden;
 
     // Work Column On Hover
     &:hover {
