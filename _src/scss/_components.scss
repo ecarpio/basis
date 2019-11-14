@@ -6,48 +6,51 @@
   transform: translateY(-50%);
 }
 
+video {
+  width: 100%;
+  margin: auto;
+  height: auto;
+  outline: none;
+}
+
 .carousel {
+  .carousel-control-prev,
+  .carousel-control-next {
+    i {
+      border: 1px solid $color-black;
+      color: $color-black;
+      font-size: 1.5rem;
+      padding: 15px 20px;
+      background-color: $color-white;
+    }
+  }
 
   &#redCarousel {
     .carousel-item {
       text-align: center;
+      img {
+        width: 100%;
+        max-width: 405px;
+      }
     }
 
     .carousel-control-prev {
-      left:-50px;
+      left: -50px;
     }
 
     .carousel-control-next {
-      right:-50px;
+      right: -50px;
     }
-
   }
 
+  &#ccbCarousel {
+    .carousel-item {
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .ease-out-quart {
   -webkit-transition: all 800ms cubic-bezier(0.165, 0.84, 0.44, 1);

@@ -15,18 +15,16 @@ header {
   @extend .ease-out-quart;
 }
 
+// Accordion Panel Header
 .panel-header {
   position: relative;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
 
-  
-
   &.work-panel-header {
-    
-    .work-detail-title { 
-      display:none;
+    .work-detail-title {
+      display: none;
 
       &:before {
         content: "";
@@ -38,10 +36,10 @@ header {
         top: 40px;
         left: -50px;
         font-size: 1.25rem;
-        cursor:pointer;
+        cursor: pointer;
       }
     }
-    
+
     &.active {
       button {
         display: none;
@@ -57,7 +55,7 @@ header {
     display: block;
     color: $color-white;
     text-decoration: none;
-    font-weight: 300;
+    font-weight: 200;
     padding: 0px;
     margin: 0px;
     transition: font-size 0.1s;
@@ -73,7 +71,7 @@ header {
       top: 50px;
       left: -50px;
       font-size: 1.25rem;
-      cursor:pointer
+      cursor: pointer;
     }
   }
 
@@ -91,19 +89,20 @@ header {
     font-size: 4.5rem;
     color: $color-white;
     text-decoration: none;
-    font-weight: 300;
+    font-weight: 200;
     width: 100%;
     display: block;
   }
 }
 
 // Work Panels
-
 .work-panel {
   .container {
     position: relative;
     display: flex;
     justify-content: space-between;
+    padding: 0px;
+    width: calc(100% - 100px);
   }
 
   // Work Column Properties
@@ -111,25 +110,20 @@ header {
     width: 32.5%;
     display: inline-flexbox;
     margin-right: 2px;
-    transition: all 0.2s ease-in;
+    transition: width 0.2s ease-in;
     position: relative;
 
     // Work Column On Hover
     &:hover {
       .work-image {
         position: relative;
+
         // Column Overlay
         &:before {
           content: "";
-          position: absolute;
-          top: 0px;
-          bottom: 0px;
-          right: 0px;
-          left: 0px;
           opacity: 1;
           background-color: rgba(0, 0, 0, 0.5);
-          transition: all 0.2s ease-in;
-          z-index: 0;
+          transition: all 0.5s ease-in;
         }
 
         // Scale work Logo
@@ -152,12 +146,24 @@ header {
       max-height: 600px;
       height: 100%;
 
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0);
+        transition: all 0.5s ease-in;
+        z-index: 0;
+      }
+
       .animate-wrapper {
         @include vertical-align();
       }
 
       .work-logo {
-       
         transform: scale(0, 0);
         width: 80%;
         font-size: 1.25rem;
@@ -165,10 +171,10 @@ header {
         margin: auto;
         opacity: 1;
         transition: all 0.2s ease-in;
-        height:150px;
+        height: 150px;
 
         img {
-          margin-bottom:10px;
+          margin-bottom: 10px;
         }
 
         .title {
@@ -180,88 +186,118 @@ header {
     }
 
     .work-detail {
-      display: none;
+      height: 0px;
+      overflow: hidden;
       background-color: $color-white;
-      padding: 50px 40px 0px 40px;
-      color: $color-black; 
+      color: $color-black;
+      opacity: 0;
 
-        h3 {
-          margin-bottom:40px;
+      h3 {
+        margin-bottom: 40px;
+      }
+
+      .intro {
+        padding: 50px 40px;
+      }
+
+      .video-container {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin: auto;
+      }
+
+      .carousel-container {
+        display: flex;
+
+        .column {
+          width: 49%;
+
+          .carousel-text {
+            padding-top: 100px;
+            padding-right: 60px;
+          }
+
+          &.padded {
+            padding: 40px 40px 0px 40px;
+          }
         }
+      }
+    }
 
-        .video-container {
-          height:340px;
-          width:100%;
-          display:table-cell;
-          vertical-align: middle;
-          text-align: center;
-          margin:auto;
-        }
+    &.hide-panel {
+      position: absolute;
+      z-index: 1;
+      overflow: hidden;
+      &:first-child {
+        left: 0px;
+      }
 
-        .carousel-container {
-          display:flex;
+      &:nth-child(2) {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+      }
 
-            .column {
-              width:49%;
-
-                .carousel-text {
-                  padding-top:100px;
-                  padding-right:60px;
-                }
-            }
-        }
-
+      &:last-child {
+        position: absolute;
+        right: 0px;
+        float: right;
+      }
     }
 
     // Work Column is Active and Expanded
     &.active {
       width: 100%;
-      transition: all 0.2s ease-in;
+      transition: width 0.2s ease-in;
+
       .work-logo {
         display: none;
       }
       .work-detail {
+        height: auto;
+        overflow: hidden;
         display: block;
         color: $color-black;
         width: 100%;
         min-height: 200px;
+        opacity: 1;
+        transition-timing-function: ease-out;
+        transition: opacity 1s;
+        transition-delay: 0.5s;
+      }
+
+      &.hide-panel {
+        position: absolute;
+        z-index: 10;
+      }
+
+      &.relative {
+        position: relative;
       }
 
       // Disable Hover Actions
       &:hover {
-        &:before {
-          opacity: 0;
-          content: "";
-          background-color: rgba(0, 0, 0, 0);
+        .work-image {
+          &:before {
+            opacity: 0;
+            content: "";
+            background-color: rgba(0, 0, 0, 0);
+          }
         }
       }
 
-      &:before {
-        content: "";
-        opacity: 0;
-        transition: all 0.2s ease-out;
-        background-color: rgba(0, 0, 0, 0);
+      .work-image {
+        &:before {
+          content: "";
+          opacity: 0;
+          transition: all 0.2s ease-out;
+          background-color: rgba(0, 0, 0, 0);
+        }
       }
     }
-  }
-}
-
-#workCarousel {
-  background: $color-black;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: none;
-  @extend .ease-out-quart;
-
-  &.active {
-    display: block;
-    @extend .ease-out-quart;
-  }
-
-  .carousel-item {
-    background-color: $color-white;
-    min-height: 200px;
   }
 }
 

@@ -23,35 +23,40 @@ $(function() {
     // Click Action to Expand and Show Detail
     $(this).on("click", function() {
       //$("#workCarousel").addClass("active");
-      $(this).addClass("active");
-      $(".work-column:not(.active)").hide();
+      $(this)
+        .addClass("active")
+        .delay(500)
+        .queue(function(next) {
+          $(this).addClass("relative");
+          next();
+        });
 
-      $(".work-panel-header").addClass("active")
-      $('.work-panel-header .work-detail-title')  .html(workCaption);
+      $(".work-column").addClass("hide-panel");
+      $(".work-panel-header").addClass("active");
+      $(".work-panel-header .work-detail-title").html(workCaption);
+
+      //Reset Video
+      $("#redVideo").get(0).currentTime = 0;
+      $("#redVideo")
+        .get(0)
+        .play();
     });
   });
 
-
   function closeExpanded() {
-    $(".work-column")
-      .removeClass("active")
-      .show();
+    $(".work-column").removeClass("active hide-panel relative");
     $(".work-panel-header").removeClass("active");
+    //Reset Video
+    $("#redVideo")
+      .get(0)
+      .pause();
   }
 
-
   $(".work-detail-title").on("click", function() {
-    closeExpanded();  
+    closeExpanded();
   });
 
-  
-
-  $('.panel-header button').on('click', function(){
-    
-
-
+  $(".panel-header button").on("click", function() {
     closeExpanded();
-
-  })
-
+  });
 });
