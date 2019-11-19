@@ -746,6 +746,9 @@ header {
     line-height: 2rem;
     margin-bottom: 5px;
   }
+  .work-nav button label {
+    display: none !important;
+  }
   .red .work-detail .carousel-container {
     display: block !important;
   }
