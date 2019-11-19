@@ -56,6 +56,11 @@ video {
   top: -170px;
 }
 
+.work-nav {
+  position: absolute;
+  z-index: 100;
+}
+
 textarea {
   width: 100%;
   height: 320px;
@@ -215,6 +220,36 @@ header {
   justify-content: space-between;
   padding: 0px;
   width: calc(100% - 100px);
+}
+
+.work-panel .work-nav {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.work-panel .work-nav button {
+  display: none;
+}
+
+.work-panel .work-nav.both button {
+  display: inline-block;
+}
+
+.work-panel .work-nav.first .prev-work {
+  display: none;
+}
+
+.work-panel .work-nav.first .next-work {
+  display: inline-block;
+}
+
+.work-panel .work-nav.last .next-work {
+  display: none;
+}
+
+.work-panel .work-nav.last .prev-work {
+  display: inline-block;
 }
 
 .work-panel .work-column {

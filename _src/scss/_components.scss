@@ -28,7 +28,6 @@ video {
 }
 
 // Logo
-
 .big-logo-container {
   text-align: center;
   margin-top: 80px;
@@ -41,6 +40,12 @@ video {
     position: relative;
     top: -170px;
   }
+}
+
+// Work Nav
+.work-nav {
+  position: absolute;
+  z-index: 100;
 }
 
 // Form

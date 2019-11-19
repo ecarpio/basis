@@ -10,6 +10,45 @@ $(function() {
     }, 400);
   });
 
+  function workNav() {
+    
+    var workNav = $('.work-nav')
+    
+    if( $(".work-column").first().hasClass('active')){
+      workNav.removeClass('last both') 
+      workNav.addClass('first')
+    } else if(
+      $(".work-column").last().hasClass('active')){
+       workNav.removeClass('first both') 
+       workNav.addClass('last')
+    } else if(
+      $(".work-column").hasClass('active')){
+        workNav.removeClass('first') 
+        workNav.removeClass('last') 
+        workNav.addClass('both')
+    } else {
+      workNav.removeClass('first last both')
+    }
+  }
+
+  // Work Navigation
+  var nextWork = $('.next-work');
+  var prevWork = $('.prev-work');
+
+  // Get Next or Previous Title Slide
+  function getLabel() {
+    var nextLabel = $('.work-column.active').next().attr('data-workCaption')
+    var prevLabel = $('.work-column.active').prev().attr('data-workCaption')
+    var currentLabel =  $('.work-column.active').attr("data-workCaption");
+    var workNavButtons = $('.work-nav button')
+
+    workNavButtons.find('span').html('');
+    nextWork.prepend('<span>' + nextLabel + '</span>');
+    prevWork.append('<span>' + prevLabel + '</span>');
+    $(".work-panel-header .work-detail-title").html(currentLabel);
+  }
+
+
   // Work Background Images
   $(".work-column").each(function() {
     var workBg = $(this).attr("data-workID");
@@ -22,7 +61,7 @@ $(function() {
 
     // Click Action to Expand and Show Detail
     $(this).on("click", function() {
-      //$("#workCarousel").addClass("active");
+
       $(this)
         .addClass("active")
         .delay(500)
@@ -35,8 +74,10 @@ $(function() {
       $(".work-panel-header").addClass("active");
       $(".work-panel-header .work-detail-title").html(workCaption);
 
+      workNav()
+      getLabel()
+      
       //Play Video
-
       $("#redVideo")
         .get(0)
         .play();
@@ -46,8 +87,9 @@ $(function() {
   function closeExpanded() {
     $(".work-column").removeClass("active hide-panel relative");
     $(".work-panel-header").removeClass("active");
+    $(".work-nav").removeClass('both first last');
 
-    //Reset Video
+    //Reset Videol
     $("#redVideo").get(0).currentTime = 0;
     $("#redVideo")
       .get(0)
@@ -65,6 +107,20 @@ $(function() {
     }, 500);
   });
 
+
+  nextWork.on('click', function(){
+    $('.work-column.active').removeClass('active').next().addClass('active')
+    workNav()
+    getLabel()
+  })
+
+  prevWork.on('click', function(){
+    $('.work-column.active').removeClass('active').prev().addClass('active')
+    workNav()
+    getLabel()
+  })
+
+  // Animated Logo
   var anim;
   var animData = {
     container: document.getElementById("logo-bm"),
@@ -96,4 +152,8 @@ $(function() {
     anim.setSpeed(1);
     anim.play();
   }
+
+
+
+
 });
