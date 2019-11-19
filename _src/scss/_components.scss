@@ -17,27 +17,39 @@ video {
 
 //Buttons
 .btn {
-
   border-radius: 0;
 
   &.btn-primary {
-    border:2px solid $color-white;
-    background-color:transparent;
-    font-size:1.5rem;
-    padding:10px 100px;
+    border: 2px solid $color-white;
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 10px 100px;
   }
 }
 
+// Logo
 
+.big-logo-container {
+  text-align: center;
+  margin-top: 80px;
+  height: 400px;
+  @extend .ease-out-quart;
+
+  .logo-b {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    top: -170px;
+  }
+}
 
 // Form
 textarea {
-  width:100%;
-  height:320px;
-  padding:20px;
-  margin-bottom:40px;
+  width: 100%;
+  height: 320px;
+  padding: 20px;
+  margin-bottom: 40px;
 }
-
 
 // Carousel
 .carousel {
@@ -70,7 +82,8 @@ textarea {
     }
   }
 
-  &#ccbCarousel, &#ohioCarousel {
+  &#ccbCarousel,
+  &#ohioCarousel {
     .carousel-item {
       img {
         width: 100%;
@@ -78,9 +91,6 @@ textarea {
     }
   }
 }
-
-
-
 
 // Animation Easing
 .ease-out-quart {

@@ -19,7 +19,10 @@ gulp.task("bootstrap", function() {
     .pipe(
       sass({
         outputStyle: "compressed",
-        includePaths: [config.node + "/bootstrap/scss/", config.node + "/@fortawesome/fontawesome-pro/scss/."]
+        includePaths: [
+          config.node + "/bootstrap/scss/",
+          config.node + "/@fortawesome/fontawesome-pro/scss/."
+        ]
       })
     )
     .on("error", sass.logError)

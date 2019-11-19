@@ -8,13 +8,6 @@ header {
   text-align: right;
 }
 
-.big-logo-container {
-  text-align: center;
-  margin-top: 80px;
-  height: 500px;
-  @extend .ease-out-quart;
-}
-
 // Accordion Panel Header
 .panel-header {
   position: relative;
@@ -304,66 +297,62 @@ header {
 
 // About Panel
 .general-panel {
-
   .hz-section {
     min-height: 50vh;
     padding: 40px 0px;
     position: relative;
-      
-      .container {
-        min-height: 50vh;
-        position: relative;
-      }
 
-      .row {
-        @include vertical-align;
-        position: absolute;
-      }
-      
-      h2 {
-        @extend .assistant;
-        font-size:2.5rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
+    .container {
+      min-height: 50vh;
+      position: relative;
+    }
 
-      h4 {
-        color:$color-light-gray;
-        font-size:1rem;
-        text-transform:uppercase;
-        letter-spacing:2px;
-      }
+    .row {
+      @include vertical-align;
+      position: absolute;
+    }
 
-      .service-list {
-        text-align: left;
+    h2 {
+      @extend .assistant;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-          ul {
-            margin:0px;
-            padding:0px;
-              li {
-                list-style-type: none;
-                font-size:.875rem;
-              }
-          }
+    h4 {
+      color: $color-light-gray;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .service-list {
+      text-align: left;
+
+      ul {
+        margin: 0px;
+        padding: 0px;
+        li {
+          list-style-type: none;
+          font-size: 0.875rem;
+        }
       }
+    }
   }
 
   .intro {
     background-color: $color-gray;
-    
-      h3 {
-        color:$color-light-gray;
-        font-weight:700;
-      }
 
+    h3 {
+      color: $color-light-gray;
+      font-weight: 700;
+    }
   }
 
   .development {
     background-color: $color-white;
     color: $color-black;
     text-align: center;
-
-      
   }
 
   .design {
@@ -371,9 +360,9 @@ header {
     text-align: center;
     color: $color-white;
 
-      h4 {
-        color:$color-white;
-      }
+    h4 {
+      color: $color-white;
+    }
   }
 }
 

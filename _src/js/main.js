@@ -2,7 +2,7 @@ $(function() {
   // Panel Animations
   $("#pageSections .btn").on("click", function() {
     $("body").addClass("panelOpen");
-
+    backAnimation();
     setTimeout(function() {
       if ($(".collapse").hasClass("show")) {
         $("body").addClass("panelOpen");
@@ -36,7 +36,7 @@ $(function() {
       $(".work-panel-header .work-detail-title").html(workCaption);
 
       //Play Video
-      
+
       $("#redVideo")
         .get(0)
         .play();
@@ -46,6 +46,7 @@ $(function() {
   function closeExpanded() {
     $(".work-column").removeClass("active hide-panel relative");
     $(".work-panel-header").removeClass("active");
+
     //Reset Video
     $("#redVideo").get(0).currentTime = 0;
     $("#redVideo")
@@ -59,5 +60,40 @@ $(function() {
 
   $(".panel-header button").on("click", function() {
     closeExpanded();
+    setTimeout(function() {
+      playAnimation();
+    }, 500);
   });
+
+  var anim;
+  var animData = {
+    container: document.getElementById("logo-bm"),
+    renderer: "svg",
+    loop: false,
+    autoplay: true,
+    rendererSettings: {
+      progressiveLoad: false
+    },
+    path: "images/logo-b.json"
+  };
+  anim = bodymovin.loadAnimation(animData);
+
+  function loopCompleteHandler() {
+    anim.removeEventListener("loopComplete", loopCompleteHandler);
+    anim.stop();
+  }
+
+  function backAnimation() {
+    anim.removeEventListener("loopComplete", loopCompleteHandler);
+    anim.setDirection(-1);
+    anim.setSpeed(4);
+    anim.play();
+  }
+
+  function playAnimation() {
+    anim.removeEventListener("loopComplete", loopCompleteHandler);
+    anim.setDirection(1);
+    anim.setSpeed(1);
+    anim.play();
+  }
 });
