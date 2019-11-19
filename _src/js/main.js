@@ -11,43 +11,51 @@ $(function() {
   });
 
   function workNav() {
-    
-    var workNav = $('.work-nav')
-    
-    if( $(".work-column").first().hasClass('active')){
-      workNav.removeClass('last both') 
-      workNav.addClass('first')
-    } else if(
-      $(".work-column").last().hasClass('active')){
-       workNav.removeClass('first both') 
-       workNav.addClass('last')
-    } else if(
-      $(".work-column").hasClass('active')){
-        workNav.removeClass('first') 
-        workNav.removeClass('last') 
-        workNav.addClass('both')
+    var workNav = $(".work-nav");
+
+    if (
+      $(".work-column")
+        .first()
+        .hasClass("active")
+    ) {
+      workNav.removeClass("last both");
+      workNav.addClass("first");
+    } else if (
+      $(".work-column")
+        .last()
+        .hasClass("active")
+    ) {
+      workNav.removeClass("first both");
+      workNav.addClass("last");
+    } else if ($(".work-column").hasClass("active")) {
+      workNav.removeClass("first");
+      workNav.removeClass("last");
+      workNav.addClass("both");
     } else {
-      workNav.removeClass('first last both')
+      workNav.removeClass("first last both");
     }
   }
 
   // Work Navigation
-  var nextWork = $('.next-work');
-  var prevWork = $('.prev-work');
+  var nextWork = $(".next-work");
+  var prevWork = $(".prev-work");
 
   // Get Next or Previous Title Slide
   function getLabel() {
-    var nextLabel = $('.work-column.active').next().attr('data-workCaption')
-    var prevLabel = $('.work-column.active').prev().attr('data-workCaption')
-    var currentLabel =  $('.work-column.active').attr("data-workCaption");
-    var workNavButtons = $('.work-nav button')
+    var nextLabel = $(".work-column.active")
+      .next()
+      .attr("data-workCaption");
+    var prevLabel = $(".work-column.active")
+      .prev()
+      .attr("data-workCaption");
+    var currentLabel = $(".work-column.active").attr("data-workCaption");
+    var workNavButtons = $(".work-nav button");
 
-    workNavButtons.find('span').html('');
-    nextWork.prepend('<span>' + nextLabel + '</span>');
-    prevWork.append('<span>' + prevLabel + '</span>');
+    workNavButtons.find("label").remove();
+    nextWork.prepend("<label>" + nextLabel + "</label>");
+    prevWork.append("<label>" + prevLabel + "</label>");
     $(".work-panel-header .work-detail-title").html(currentLabel);
   }
-
 
   // Work Background Images
   $(".work-column").each(function() {
@@ -61,7 +69,6 @@ $(function() {
 
     // Click Action to Expand and Show Detail
     $(this).on("click", function() {
-
       $(this)
         .addClass("active")
         .delay(500)
@@ -74,9 +81,9 @@ $(function() {
       $(".work-panel-header").addClass("active");
       $(".work-panel-header .work-detail-title").html(workCaption);
 
-      workNav()
-      getLabel()
-      
+      workNav();
+      getLabel();
+
       //Play Video
       $("#redVideo")
         .get(0)
@@ -87,7 +94,7 @@ $(function() {
   function closeExpanded() {
     $(".work-column").removeClass("active hide-panel relative");
     $(".work-panel-header").removeClass("active");
-    $(".work-nav").removeClass('both first last');
+    $(".work-nav").removeClass("both first last");
 
     //Reset Videol
     $("#redVideo").get(0).currentTime = 0;
@@ -107,18 +114,23 @@ $(function() {
     }, 500);
   });
 
+  nextWork.on("click", function() {
+    $(".work-column.active")
+      .removeClass("active")
+      .next()
+      .addClass("active");
+    workNav();
+    getLabel();
+  });
 
-  nextWork.on('click', function(){
-    $('.work-column.active').removeClass('active').next().addClass('active')
-    workNav()
-    getLabel()
-  })
-
-  prevWork.on('click', function(){
-    $('.work-column.active').removeClass('active').prev().addClass('active')
-    workNav()
-    getLabel()
-  })
+  prevWork.on("click", function() {
+    $(".work-column.active")
+      .removeClass("active")
+      .prev()
+      .addClass("active");
+    workNav();
+    getLabel();
+  });
 
   // Animated Logo
   var anim;
@@ -152,8 +164,4 @@ $(function() {
     anim.setSpeed(1);
     anim.play();
   }
-
-
-
-
 });

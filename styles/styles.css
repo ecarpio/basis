@@ -59,6 +59,99 @@ video {
 .work-nav {
   position: absolute;
   z-index: 100;
+  overflow: hidden;
+}
+
+.work-nav button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-weight: 200;
+  font-size: 1.5rem;
+  height: 62px;
+  width: 62px;
+  padding: 0px;
+  outline: none;
+  cursor: pointer;
+}
+
+.work-nav button.next-work span {
+  right: 0px;
+}
+
+.work-nav button.next-work label {
+  float: left;
+  text-align: left;
+  transform-origin: right;
+}
+
+.work-nav button.next-work label:before {
+  content: "NEXT:";
+  font-size: 0.875rem;
+  display: block;
+}
+
+.work-nav button.prev-work span {
+  left: 0px;
+}
+
+.work-nav button.prev-work label {
+  float: right;
+  transform-origin: left;
+  text-align: left;
+}
+
+.work-nav button.prev-work label:before {
+  content: "PREVIOUS:";
+  font-size: 0.875rem;
+  display: block;
+}
+
+.work-nav button span {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 10px 18px;
+  display: inline-block;
+  color: #ffffff;
+  height: 60px;
+  width: 60px;
+  transition: transform 0.2s ease-in;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 10;
+}
+
+.work-nav button label {
+  transform: scaleX(0);
+  width: 0;
+  overflow: hidden;
+  display: inline-block;
+  height: 60px;
+  transition: transform 0.2s ease-out;
+  white-space: nowrap;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 1.2rem;
+  position: absolute;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.work-nav button:hover {
+  width: auto;
+}
+
+.work-nav button:hover label {
+  width: auto;
+  transform: scaleX(1);
+  transition: transform 0.1s ease-in;
+  position: relative;
+}
+
+.work-nav button:hover span {
+  background-color: #777;
+  border-color: #777;
+  transition: transform 0.2s ease-in;
 }
 
 textarea {
@@ -157,7 +250,7 @@ header {
   background-repeat: no-repeat;
   position: absolute;
   top: 40px;
-  left: -50px;
+  left: -35px;
   font-size: 1.25rem;
   cursor: pointer;
 }
@@ -189,7 +282,7 @@ header {
   background-repeat: no-repeat;
   position: absolute;
   top: 50px;
-  left: -50px;
+  left: -35px;
   font-size: 1.25rem;
   cursor: pointer;
 }
@@ -250,6 +343,10 @@ header {
 
 .work-panel .work-nav.last .prev-work {
   display: inline-block;
+}
+
+.work-panel .work-nav.last .prev-work label {
+  transform-origin: right;
 }
 
 .work-panel .work-column {
@@ -372,6 +469,11 @@ header {
   padding: 40px 40px 0px 40px;
 }
 
+.work-panel .work-column .hero-text {
+  height: 0;
+  opacity: 0;
+}
+
 .work-panel .work-column.hide-panel {
   position: absolute;
   z-index: 1;
@@ -405,6 +507,57 @@ header {
   display: none;
 }
 
+.work-panel .work-column.active .hero-text {
+  height: auto;
+  float: left;
+  opacity: 1;
+  transition-delay: 2s;
+  transition: all 0.2s ease-in;
+}
+
+.work-panel .work-column.active.red .hero-text {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  font-weight: 200;
+}
+
+.work-panel .work-column.active.red .hero-text img {
+  max-width: 300px;
+  margin-bottom: 15px;
+}
+
+.work-panel .work-column.active.red .hero-text h1 {
+  font-weight: 200;
+  font-size: 3rem;
+  line-height: 3.1rem;
+  margin-bottom: 20px;
+}
+
+.work-panel .work-column.active.red .hero-text p {
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+.work-panel .work-column.active.ccb .hero-text {
+  text-align: left;
+  position: absolute;
+  bottom: 0px;
+}
+
+.work-panel .work-column.active.ccb .hero-text .ccb-logo-hero {
+  margin-left: 20px;
+  max-width: 320px;
+}
+
+.work-panel .work-column.active.ccb .hero-text .ccb-sites {
+  margin-top: 50px;
+}
+
 .work-panel .work-column.active .work-detail {
   height: auto;
   overflow: hidden;
@@ -431,6 +584,10 @@ header {
   opacity: 0;
   content: "";
   background-color: rgba(0, 0, 0, 0);
+}
+
+.work-panel .work-column.active .work-image {
+  position: relative;
 }
 
 .work-panel .work-column.active .work-image:before {
@@ -531,6 +688,12 @@ header {
   .container {
     width: 100% !important;
   }
+  .big-logo-container .logo-b {
+    width: 150%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .panel-header .btn {
     font-size: 3.2rem;
   }
@@ -565,5 +728,54 @@ header {
   .work-panel .work-column .work-image {
     height: 200px;
     min-height: 200px;
+  }
+  .work-panel .work-column .work-image:before {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .work-panel .work-column .work-image .work-logo {
+    transform: scale(1);
+  }
+  .work-panel .work-column.active .work-image {
+    height: 300px !important;
+  }
+  .work-panel .work-column.active.red .hero-text {
+    padding: 0px 30px;
+  }
+  .work-panel .work-column.active.red .hero-text h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .panel-header .btn {
+    font-size: 3rem;
+    margin-left: 35px;
+  }
+  .panel-header .btn:before {
+    top: 25px;
+    left: -10px;
+  }
+  .panel-header .collapsed {
+    font-size: 1.35rem;
+  }
+  .panel-header .big-logo-container .logo-b {
+    width: 180% !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .panel-header .work-detail-title {
+    font-size: 2.5rem;
+    top: 10px;
+    margin-left: 35px;
+  }
+  .panel-header .work-detail-title:before {
+    top: 15px !important;
+    left: 0px !important;
+  }
+  .hero-text {
+    width: 100% !important;
   }
 }

@@ -27,7 +27,7 @@ header {
         background-repeat: no-repeat;
         position: absolute;
         top: 40px;
-        left: -50px;
+        left: -35px;
         font-size: 1.25rem;
         cursor: pointer;
       }
@@ -62,7 +62,7 @@ header {
       background-repeat: no-repeat;
       position: absolute;
       top: 50px;
-      left: -50px;
+      left: -35px;
       font-size: 1.25rem;
       cursor: pointer;
     }
@@ -100,16 +100,16 @@ header {
 
   .work-nav {
     position: absolute;
-    top:0px;
-    right:0px;
+    top: 0px;
+    right: 0px;
 
     button {
-      display:none;
+      display: none;
     }
-  
+
     &.both {
       button {
-        display:inline-block;
+        display: inline-block;
       }
     }
 
@@ -119,7 +119,7 @@ header {
       }
 
       .next-work {
-        display:inline-block;
+        display: inline-block;
       }
     }
 
@@ -129,7 +129,11 @@ header {
       }
 
       .prev-work {
-        display:inline-block;
+        display: inline-block;
+
+        label {
+          transform-origin: right;
+        }
       }
     }
   }
@@ -142,8 +146,6 @@ header {
     transition: width 0.2s ease-in;
     position: relative;
     overflow: hidden;
-
-
 
     // Work Column On Hover
     &:hover {
@@ -257,6 +259,11 @@ header {
       }
     }
 
+    .hero-text {
+      height: 0;
+      opacity: 0;
+    }
+
     &.hide-panel {
       position: absolute;
       z-index: 1;
@@ -288,6 +295,58 @@ header {
       .work-logo {
         display: none;
       }
+
+      .hero-text {
+        height: auto;
+        float: left;
+        opacity: 1;
+        transition-delay: 2s;
+        transition: all 0.2s ease-in;
+      }
+
+      &.red {
+        .hero-text {
+          width: 50%;
+          @include vertical-align($position: absolute);
+          text-align: center;
+          font-weight: 200;
+
+          img {
+            max-width: 300px;
+            margin-bottom: 15px;
+          }
+
+          h1 {
+            font-weight: 200;
+            font-size: 3rem;
+            line-height: 3.1rem;
+            margin-bottom: 20px;
+          }
+
+          p {
+            font-size: 1rem;
+            line-height: 1.2rem;
+          }
+        }
+      }
+
+      &.ccb {
+        .hero-text {
+          text-align: left;
+          position: absolute;
+          bottom: 0px;
+
+          .ccb-logo-hero {
+            margin-left: 20px;
+            max-width: 320px;
+          }
+
+          .ccb-sites {
+            margin-top: 50px;
+          }
+        }
+      }
+
       .work-detail {
         height: auto;
         overflow: hidden;
@@ -322,6 +381,7 @@ header {
       }
 
       .work-image {
+        position: relative;
         &:before {
           content: "";
           opacity: 0;

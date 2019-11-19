@@ -3,7 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1">
     <link rel="stylesheet" href="styles/vendors.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Teko:500,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Assistant:200,300,400,600,700&display=swap" rel="stylesheet">
@@ -25,10 +25,7 @@
       <div class="row">
         <div class="col-12">
           <div class="big-logo-container">
-            
-
             <div id="logo-bm" class="logo-b"></div>
-
           </div>
         </div>
       </div>
@@ -56,19 +53,27 @@
 
         <div class="container">
             <div class="work-nav">
-                <button class="prev-work"> < </button>
-                <button class="next-work"> > </button>
+                <button class="prev-work"> <span><i class="fal fa-chevron-left"></i></span> </button>
+                <button class="next-work"> <span><i class="fal fa-chevron-right"></i></span> </button>
               </div>
         </div>
 
         <div class="container">
-
-          
-
           <!-- Start Red Work Column-->
           <div class="work-column red" id="red" data-workId="red" data-workCaption="Red Hydrogen One">
             
             <div class="work-image">
+
+              <div class="hero-text">
+                <img src="images/hyd-logo.png" />
+                <h1>You didn't see or hear this coming</h1>
+                <p>
+                  The World's first 4-view Media Machine.
+                  <br />
+                  Better than 3D without the glasses.
+                </p>
+              </div>
+
               <div class="animate-wrapper">
                 <div class="work-logo">
                   <img src="images/bug-red.png" />
@@ -188,6 +193,12 @@
           <!-- Start CCB Work Column-->
           <div class="work-column ccb" data-workId="ccb" data-workCaption="California Cryobank">  
               <div class="work-image">
+
+                <div class="hero-text">
+                  <img src="images/ccb-logo.png" class="ccb-logo-hero" />
+                  <img src="images/ccb-sites.png" class="ccb-sites" />
+                </div>
+
                 <div class="animate-wrapper">
                   <div class="work-logo">
                     <img src="images/bug-ccb.png" />

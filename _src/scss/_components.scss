@@ -46,6 +46,103 @@ video {
 .work-nav {
   position: absolute;
   z-index: 100;
+  overflow: hidden;
+
+  button {
+    background: none;
+    border: none;
+    color: $color-white;
+    font-weight: 200;
+    font-size: 1.5rem;
+    height: 62px;
+    width: 62px;
+    padding: 0px;
+    outline: none;
+    cursor: pointer;
+
+    &.next-work {
+      span {
+        right: 0px;
+      }
+
+      label {
+        float: left;
+        text-align: left;
+        transform-origin: right;
+
+        &:before {
+          content: "NEXT:";
+          font-size: 0.875rem;
+          display: block;
+        }
+      }
+    }
+
+    &.prev-work {
+      span {
+        left: 0px;
+      }
+
+      label {
+        float: right;
+        transform-origin: left;
+        text-align: left;
+
+        &:before {
+          content: "PREVIOUS:";
+          font-size: 0.875rem;
+          display: block;
+        }
+      }
+    }
+
+    span {
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 10px 18px;
+      display: inline-block;
+      color: $color-white;
+      height: 60px;
+      width: 60px;
+      transition: transform 0.2s ease-in;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: relative;
+      z-index: 10;
+    }
+
+    label {
+      transform: scaleX(0);
+      width: 0;
+      overflow: hidden;
+      display: inline-block;
+      height: 60px;
+      transition: transform 0.2s ease-out;
+      white-space: nowrap;
+      padding-top: 5px;
+      padding-left: 15px;
+      padding-right: 15px;
+      line-height: 1.2rem;
+      position: absolute;
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &:hover {
+      width: auto;
+
+      label {
+        width: auto;
+        transform: scaleX(1);
+        transition: transform 0.1s ease-in;
+        position: relative;
+      }
+
+      span {
+        background-color: $color-light-gray;
+        border-color: $color-light-gray;
+        transition: transform 0.2s ease-in;
+      }
+    }
+  }
 }
 
 // Form
