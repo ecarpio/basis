@@ -746,6 +746,17 @@ header {
     line-height: 2rem;
     margin-bottom: 5px;
   }
+  .red .work-detail .carousel-container {
+    display: block !important;
+  }
+  .red .work-detail .carousel-container .column {
+    width: 100% !important;
+    display: block;
+  }
+  .red .work-detail .carousel-container .carousel-text {
+    width: 100% !important;
+    padding: 0px !important;
+  }
 }
 
 @media (max-width: 767px) {
