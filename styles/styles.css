@@ -760,12 +760,6 @@ header {
   .panel-header .collapsed {
     font-size: 1.35rem;
   }
-  .panel-header .big-logo-container .logo-b {
-    width: 180% !important;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
   .panel-header .work-detail-title {
     font-size: 2.5rem;
     top: 10px;
@@ -774,6 +768,16 @@ header {
   .panel-header .work-detail-title:before {
     top: 15px !important;
     left: 0px !important;
+  }
+  .big-logo-container {
+    height: 50vh;
+  }
+  .big-logo-container .logo-b {
+    width: 180% !important;
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .hero-text {
     width: 100% !important;
