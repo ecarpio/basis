@@ -347,6 +347,14 @@ header {
         }
       }
 
+      &.ohio {
+        .work-image {
+          background-image: url("../images/hero-ohio-2.png") !important;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+
       .work-detail {
         height: auto;
         overflow: hidden;
