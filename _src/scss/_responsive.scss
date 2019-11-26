@@ -78,6 +78,15 @@
             }
           }
         }
+
+        &.ccb {
+          .work-image {
+            img {
+              width:80%;
+            }
+          }
+        }
+
       }
     }
   }
@@ -149,5 +158,13 @@
 
   .hero-text {
     width: 100% !important;
+  }
+
+  .ccb {
+    .work-image {
+      img {
+        width:60%;
+      }
+    }
   }
 }

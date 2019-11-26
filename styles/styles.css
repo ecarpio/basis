@@ -547,6 +547,7 @@ header {
   text-align: left;
   position: absolute;
   bottom: 0px;
+  width: 50%;
 }
 
 .work-panel .work-column.active.ccb .hero-text .ccb-logo-hero {
@@ -746,6 +747,9 @@ header {
     line-height: 2rem;
     margin-bottom: 5px;
   }
+  .work-panel .work-column.active.ccb .work-image img {
+    width: 80%;
+  }
   .work-nav button label {
     display: none !important;
   }
@@ -795,5 +799,8 @@ header {
   }
   .hero-text {
     width: 100% !important;
+  }
+  .ccb .work-image img {
+    width: 60%;
   }
 }

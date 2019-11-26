@@ -107,12 +107,30 @@ $(function() {
     closeExpanded();
   });
 
-  $(".panel-header button").on("click", function() {
+  $(".panel-header .collapsed").on("click", function() {
     closeExpanded();
     setTimeout(function() {
-      playAnimation();
+      backAnimation()
     }, 500);
   });
+
+
+  $(document).on("click",".panel-header button:not('.collapsed')",function() {
+    closeExpanded();
+    
+    setTimeout(function() {
+      playAnimation()
+    }, 500);
+  });
+
+  // $(".panel-header button:not('.collapsed')").on("click", function() {
+  //   console.log('rteere')
+  //   closeExpanded();
+    
+  //   setTimeout(function() {
+  //     playAnimation()
+  //   }, 500);
+  // });
 
   nextWork.on("click", function() {
     $(".work-column.active")
